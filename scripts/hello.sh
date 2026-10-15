@@ -11,3 +11,5 @@ hostname
 date
 uptime
 ip a | grep -i inet
+
+echo "Git modification practice completed"
