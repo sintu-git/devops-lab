@@ -12,4 +12,6 @@ date
 uptime
 ip a | grep -i inet
 
+if
+
 echo "Git modification practice completed"
