@@ -1,0 +1,29 @@
+name: Bash checking pipeline
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  bash-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout Repository
+        uses: actions/checkout@v6
+
+      - name: display Runner Information
+        run: |
+          hostname
+          uname -r
+          cat /etc/os-release
+
+      - name: validate Bash Script
+        run: |
+          find scripts -type f -name "*.sh" -print0 | xargs -0 -r -n1 bash -n
+
+      - name: Pipeline Completed
+        run: echo "All Bash scripts validated successfully"
+
+         
